@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Thin';
-    src: url('../../fonts/experience/Overpass-Thin.ttf');
+    src: url('Overpass-Thin.ttf');
 }
 
 @font-face {
     font-family: 'Medium';
-    src: url('../../fonts/experience/Overpass-Medium.ttf');
+    src: url('Overpass-Medium.ttf');
 }
 
 @font-face {
     font-family: 'Light';
-    src: url('../../fonts/experience/Overpass-Light.ttf');
+    src: url('Overpass-Light.ttf');
 }
 
 html, body {
