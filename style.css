@@ -13,6 +13,11 @@
     src: url('assets/fonts/Ponte/PonteLight.ttf');
 }
 
+@font-face {
+    font-family: 'PonteMedium';
+    src: url('assets/fonts/Ponte/PonteMedium.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,24 +38,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.logo {
-    position: fixed; 
-    top: 30%;
-    left: 50%; 
-    transform: translateX(-50%);
-    z-index: 1000;
-}
-
-#logo {
-    width: 2.5rem; /* Beperk grootte op kleinere schermen */
-    height: auto; 
-    position: relative;
-    z-index: 2;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .title {
     position: fixed;
     bottom: 10%;
@@ -62,12 +49,14 @@ body {
 
 .title h1 {
     font-family: 'PonteLightItalic', sans-serif;
-    font-size: 12vw;
+    font-size: clamp(8vw, 10vw, 12vw); /* Dynamisch tussen 8vw en 12vw */
     color: white;
     will-change: transform, font-size;
-    letter-spacing: 0.3rem;
+    letter-spacing: clamp(0.1rem, 0.3rem, 0.5rem); /* Letterafstand responsief */
     position: relative;
     z-index: 1;
+    margin: 0 auto; /* Centreer */
+    line-height: 1; /* Verklein ruimte tussen regels */
 }
 
 .pyramid {
@@ -105,28 +94,22 @@ body {
 
 .box1 {
     width: 100%;
-    height: 10vh; 
-    display: flex;
+    height: 100vh; 
     justify-content: center;
     align-items: center; 
+    transform: translateY(10vh);
 }
 
-.text-box1 {
+.box1 p {
     font-family: 'PonteLight';
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1.5rem);
     color: white;
     text-align: center;
-    width: 22vw;
-    transform: translateY(-10vh);
 }
 
-#main-title, #logo {
-    transition: opacity 0.5s ease;
-    opacity: 1; 
-}
-
-.fade-out {
-    opacity: 0;
+.box1 img {
+    width: 30vw;
+    pointer-events: none;
 }
 
 @keyframes float {
@@ -139,36 +122,50 @@ body {
 }
 
 @media (max-width: 768px) {
-    .logo {
-        display: none; /* Verberg het logo */
-    }
-
     .pyramid-image {
-        display: none; /* Verberg de afbeelding */
+        display: none; 
     }
 
     .title {
-        position: fixed; /* Zorg ervoor dat de titel vast blijft staan */
-        top: 0; /* Plaats bovenaan */
-        width: 100%; /* Zorg dat het de hele breedte vult */
-        z-index: 1; /* Houd het boven andere elementen */
-        padding: 10px 0; /* Extra padding voor een mooie look */
-        text-align: center; /* Tekst gecentreerd */
+        position: fixed;
+        top: 0;
+        width: 100%; 
+        z-index: 1; 
+        padding: 10px 0; 
+        text-align: center; 
     }
     
     .title h1 {
-        font-size: 10vw; /* Zorg voor een goede schaal op kleinere schermen */
+        font-size: 10vw; 
     }
 
     .content {
-        padding-top: 20px; /* Add a small space from the top */
+        padding-top: 20px;
     }
 
     .box1 {
-        margin-top: 0; /* Remove unnecessary top margin */
+        margin-top: 0; 
     }
 
-    .text-box1 {
-        font-size: 1rem; /* Adjust the font size for smaller screens */
+    .box1 p {
+        font-size: 1rem;
+    }
+
+    .box1 img {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: clamp(6vw, 8vw, 10vw);
+        letter-spacing: 0.2rem; 
+    }
+}
+
+@media (min-width: 1440px) {
+    .title h1 {
+        font-size: 14vw;
+        letter-spacing: 0.5rem;
     }
 }
