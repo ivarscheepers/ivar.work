@@ -1,6 +1,5 @@
 document.addEventListener("scroll", () => {
     const title = document.getElementById("main-title");
-    const logo = document.getElementById("logo");
     const image = document.querySelector(".pyramid-image");
     const scrollY = window.scrollY;
 
@@ -36,26 +35,8 @@ document.addEventListener("scroll", () => {
         logo.style.opacity = "1";
     }
 
-    if (scrollY <= maxScrollLogoMove) {
-        const scrollFractionMove = scrollY / maxScrollLogoMove;
-        const translateYLogo = -scrollFractionMove * 26;
-        const scaleLogo = 1 - scrollFractionMove * 0.1;
-        logo.style.transform = `translateY(${translateYLogo}vh) scale(${scaleLogo})`;
-        logo.style.position = "relative";
-    }
-
     const maxScroll = 2700;
     const scrollFraction = Math.min(scrollY / maxScroll, 1);
     const translateYImage = scrollFraction * 50;
     image.style.transform = `translateY(-${translateYImage}vh)`;
-
-    if (window.innerWidth <= 768) {
-        // Geen effecten toepassen op de titel bij kleine schermen
-        title.style.transform = "none";
-        title.style.fontSize = "10vw"; // Zorg dat het consistent blijft
-        title.style.opacity = "1"; // Altijd zichtbaar
-
-        return;
-
-    }
 });
