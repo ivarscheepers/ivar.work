@@ -6,28 +6,24 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/png" href="assets/images/logos/maussie.png">
     <script defer src="scripts.js"></script>
-    <title>ivar.work</title>
+    <title>IVAR</title>
 </head>
 <body>
-    <div class="header">
-        <div class="title">
-            <h1 id="main-title">ivar.work</h1>
-        </div>
-    </div>
+    <nav>
+        <ul>
+            <li class="nav-left"><a href="#">IVAR</a></li>
+            <li class="nav-right"><a href="#">ABOUT</a></li>
+        </ul>
+    </nav>
 
-    <div class="pyramid">
-        <img class="pyramid-image" src="assets/images/Car.jpg" alt="Car"/>
-    </div>
-
-    <div class="content">
-        <div class="parallax-container">
-            <div class="box1">
-                    <p>I</p>
-                    <img src="assets/images/squabble3.png">
-                    <img src="assets/images/squabble.png">
-                    <img src="assets/images/squabble2.png">
+    <main>
+        <div class="image-row">
+            <img src="assets/images/squabble.png" alt="The Red Edition" class="book" onclick="toggleExpand(this)">
+            <div class="text-container" id="textContainer">
+                <p id="textContent">I AM REINCARNATED</p>
             </div>
         </div>
-    </div>
+        
+    </main>
 </body>
 </html>
