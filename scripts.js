@@ -1,42 +1,31 @@
-document.addEventListener("scroll", () => {
-    const title = document.getElementById("main-title");
-    const image = document.querySelector(".pyramid-image");
-    const scrollY = window.scrollY;
+let isAnimating = false;
 
-    const maxScrollPhase1 = 700;
-    const maxScrollPhase2 = 1700;
-    const maxScrollLogoMove = 1700;
-    const fadeOutTrigger = 1500; 
-    const fadeOutEnd = 2000; 
+function toggleExpand(img) {
+    if (isAnimating) return;
 
-    if (scrollY <= maxScrollPhase1) {
-        const scrollFractionPhase1 = scrollY / maxScrollPhase1;
-        const translateY = scrollFractionPhase1 * 35;
-        title.style.transform = `translateY(-${translateY}vh)`;
-        title.style.fontSize = `12vw`;
-    } else if (scrollY > maxScrollPhase1 && scrollY <= maxScrollPhase2) {
-        const scrollFractionPhase2 = (scrollY - maxScrollPhase1) / (maxScrollPhase2 - maxScrollPhase1);
-        const translateY = 35 + scrollFractionPhase2 * 35;
-        const fontSize = 12 - scrollFractionPhase2 * 6;
-        title.style.transform = `translateY(-${translateY}vh)`;
-        title.style.fontSize = `${fontSize}vw`;
+    isAnimating = true;
+
+    img.classList.toggle('expanded');
+    const textContainer = document.getElementById('textContainer');
+
+    if (img.classList.contains('expanded')) {
+        document.body.style.backgroundColor = "#ffffff";
+        document.body.classList.add('gold-text');
+
+        textContainer.classList.remove('fade-out');
+        textContainer.classList.add('visible');
     } else {
-        title.style.transform = `translateY(-70vh)`;
-        title.style.fontSize = `6vw`;
+        document.body.style.backgroundColor = "#141414";
+        document.body.classList.remove('gold-text');
+
+        textContainer.classList.remove('visible');
+        textContainer.classList.add('fade-out');
     }
 
-    if (scrollY >= fadeOutTrigger) {
-        const fadeFraction = (scrollY - fadeOutTrigger) / (fadeOutEnd - fadeOutTrigger);
-        const opacity = Math.max(1 - fadeFraction, 0);
-        title.style.opacity = opacity;
-        logo.style.opacity = opacity;
-    } else {
-        title.style.opacity = "1";
-        logo.style.opacity = "1";
-    }
-
-    const maxScroll = 2700;
-    const scrollFraction = Math.min(scrollY / maxScroll, 1);
-    const translateYImage = scrollFraction * 50;
-    image.style.transform = `translateY(-${translateYImage}vh)`;
-});
+    setTimeout(() => {
+        isAnimating = false; 
+        if (!img.classList.contains('expanded')) {
+            textContainer.classList.remove('fade-out');
+        }
+    }, 1000);
+}
