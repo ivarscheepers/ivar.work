@@ -29,3 +29,61 @@ function toggleExpand(img) {
         }
     }, 1000);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const ease = "power4.inOut";
+
+    gsap.set(".block", { visibility: "hidden", scaleY: 0 });
+
+    document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const href = link.getAttribute("href");
+
+            if (href && !href.startsWith("#") && href !== window.location.pathname) {
+                animateTransition(href).then(() => {
+                    window.location.href = href;
+                });
+            }
+        });
+    });
+
+    revealTransition().then(() => {
+        gsap.set(".block", { visibility: "hidden", scaleY: 0 });
+    });
+
+    function revealTransition() {
+        return new Promise((resolve) => {
+            gsap.set(".block", { visibility: "visible", scaleY: 1, opacity: 1 });
+            gsap.to(".block", {
+                scaleY: 0,
+                opacity: 1,
+                duration: 1.2,
+                stagger: {
+                    each: 0.1,
+                    from: "start",
+                },
+                ease: ease,
+                onComplete: resolve,
+            });
+        });
+    }
+
+    function animateTransition(href) {
+        return new Promise((resolve) => {
+            const animationDirection = href.endsWith("index.html") ? "start" : "start"; 
+            gsap.set(".block", { visibility: "visible", scaleY: 0, opacity: 1 });
+            gsap.to(".block", {
+                scaleY: 1,
+                opacity: 1,
+                duration: 1.2,
+                stagger: {
+                    each: 0.1,
+                    from: animationDirection, 
+                },
+                ease: ease,
+                onComplete: resolve,
+            });
+        });
+    }
+});
