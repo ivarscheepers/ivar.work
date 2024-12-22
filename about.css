@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'ManropeBold';
+    src: url('assets/fonts/Manrope/Manrope-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/Manrope/Manrope-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ManropeExtraBold';
+    src: url('assets/fonts/Manrope/Manrope-ExtraBold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #141414;
+    font-family: 'Manrope', sans-serif;
+    transition: background-color 1s ease;
+}
+
+body.gold-text, body.gold-text * {
+    color: #cc9933;
+}
+
+nav {
+    height: 80px;
+    padding: 0 20px;
+    color: inherit;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    margin: 30px 0 0 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.nav-left {
+    margin-left: 15px;
+    font-family: 'ManropeBold';
+    font-size: 30px;
+}
+
+.nav-right {
+    margin-right: 25px;
+    font-family: 'Manrope';
+    font-size: 15px;
+}
+
+.nav-right:hover {
+    font-style: italic;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#textContent {
+    font-family: 'ManropeExtraBold', sans-serif;
+    font-size: 6rem; 
+    color: white; 
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 24px;
+}
+
+#textContent a {
+    text-decoration: none;
+    color: white;
+}
+
+
+@media (max-width: 800px) {
+    #textContent {
+        font-size: 5rem;
+        margin-left: 25px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    #textContent {
+        font-size: 4rem;
+        margin-left: 20px;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    #textContent {
+        font-size: 2.25rem;
+        margin-left: 17.5px;
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    #textContent {
+        font-size: 1.5rem;
+        margin-left: 15px;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 100px) {
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        justify-content: center;
+        padding: 10px 0;
+    }
+}
+
+.transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 500;
+    pointer-events: none;
+}
+
+.transition-row {
+    flex: 1;
+    display: flex;
+}
+
+.transition-row.row-1 .block {
+    transform-origin: top;
+}
+
+.transition-row.row-2 .block {
+    transform-origin: bottom;
+}
+
+.block {
+    flex: 1;
+    background-color: #0A0A0A;
+    transform: scaleY(0);
+    will-change: transform;
+    visibility: hidden;
+}
