@@ -275,4 +275,5 @@ main {
     transform: scaleY(0);
     will-change: transform;
     visibility: hidden;
+    z-index: 100000;
 }
