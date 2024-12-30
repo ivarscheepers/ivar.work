@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function animateTransition(href) {
         return new Promise((resolve) => {
-            const animationDirection = href.endsWith("index.html") ? "start" : "start"; 
+            const animationDirection = href.endsWith("index.html") ? "end" : "start"; 
             gsap.set(".block", { visibility: "visible", scaleY: 0, opacity: 1 });
             gsap.to(".block", {
                 scaleY: 1,
@@ -86,4 +86,20 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+});
+
+document.addEventListener("scroll", () => {
+    const scrollIndicator = document.querySelector(".scroll-indicator");
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const scrollPercentage = (scrollPosition / scrollHeight) * 100;
+
+    scrollIndicator.style.height = `${scrollPercentage}%`;
+});
+
+document.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const image = document.querySelector('.title-image');
+    const width = Math.max(30, 50 - scrollY / 50); 
+    image.style.width = `${width}vw`;
 });
