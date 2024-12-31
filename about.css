@@ -133,7 +133,7 @@ main {
 }
 
 .title-image {
-    width: 50vw;
+    width: 70vw;
     height: auto;
     object-fit: cover;
     transform: scale(1); 
@@ -162,12 +162,11 @@ main {
     max-width: 280px;
     height: 280px;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .experience-text1, .experience-text2 {
     color: white;
-    font-size: 1rem;
     text-align: left;
     max-width: 280px;
     width: 100%;
@@ -175,10 +174,110 @@ main {
 
 .experience-text1 {
     font-family: 'ManropeBold', sans-serif;
+    font-size: 1rem;
 }
 
 .experience-text2 {
     font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+}
+
+.title3 {
+    font-family: 'ManropeBold', sans-serif;
+    font-size: 6rem;
+    color: #fff;
+    text-align: left;
+    margin-left: 100px;
+    padding-top: 200px;
+}
+
+.achievements-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+}
+
+.achievement-text {
+    flex: 1;
+    max-width: 500px;
+    margin-left: 110px;
+    font-family: 'Manrope', sans-serif;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.achievement-boxes {
+    position: absolute;
+    top: -100px; 
+    right: 12vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: auto;
+}
+
+.achievement-box {
+    position: relative;
+    width: 330px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.title-marquee, .title-marquee2 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    margin-bottom: 0px; 
+    pointer-events: auto; 
+}
+
+.title-marquee p {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+    font-family: 'ManropeExtraBold', sans-serif;
+    font-size: 2rem;
+    color: #01010e;
+}
+
+.title-marquee2 p {
+    display: inline-block;
+    animation: marquee2 10s linear infinite;
+    font-family: 'ManropeExtraBold', sans-serif;
+    font-size: 2rem;
+    color: #01010e;
+}
+
+.box-text {
+    color: #9a9a9a;
+    text-align: left;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes marquee2 {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+.title-marquee:hover p,
+.title-marquee2:hover p {
+    animation-play-state: paused;
 }
 
 @media (max-width: 1200px) {
@@ -190,8 +289,53 @@ main {
         font-size: 5rem;
     }
 
+    .title3 {
+        font-size: 5rem;
+        text-align: center;
+        margin-left: 0px;
+    }
+
     .content-text {
         max-width: 30em; 
+    }
+
+    .achievements-container {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    .achievement-text {
+        margin: 0 auto 20px; 
+        max-width: 80%; 
+    }
+
+    .achievement-boxes {
+        position: static; 
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 20px;
+    }
+
+    .achievement-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .box-text {
+        color: #9a9a9a;
+        text-align: center;
+        font-family: 'Manrope', sans-serif;
+        font-size: 1rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    .stacked-images-container {
+        display: none;
     }
 }
 
@@ -202,6 +346,10 @@ main {
 
     .title2 {
         font-size: 4rem;
+    }
+
+    .title3 {
+        font-size: 3rem;
     }
 
     .content-text {
@@ -219,6 +367,11 @@ main {
         font-size: 3rem;
     }
 
+    .title3 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
     .content-text {
         max-width: 20em; 
     }
@@ -226,6 +379,11 @@ main {
     .experiences {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .back-button {
+        left: 25px;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -234,6 +392,10 @@ main {
     }
 
     .title2 {
+        font-size: 2.5rem;
+    }
+
+    .title3 {
         font-size: 2.5rem;
     }
 
@@ -259,6 +421,10 @@ main {
     .experience-text {
         text-align: center;
     }
+
+    .back-button {
+        left: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -267,6 +433,10 @@ main {
     }
 
     .title2 {
+        font-size: 2rem;
+    }
+
+    .title3 {
         font-size: 2rem;
     }
 
@@ -291,6 +461,10 @@ main {
 
     .experience-text {
         text-align: center;
+    }
+
+    .back-button {
+        left: 15px;
     }
 }
 
@@ -325,4 +499,73 @@ main {
     transform: scaleY(0);
     will-change: transform;
     visibility: hidden;
+}
+
+.stacked-images-container {
+    position: relative;
+    width: 350px; 
+    height: 350px;
+    margin-top: 250px;
+    margin-left: 10vw; 
+}
+
+.stacked-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out, filter 0.5s ease-out;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.stacked-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-out; 
+}
+
+.stacked-image:nth-child(1) {
+    transform: rotate(-40deg);
+    z-index: 3;
+    margin-top: -120px;
+}
+
+.stacked-image:nth-child(2) {
+    transform: rotate(-15deg);
+    z-index: 2;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.stacked-image:nth-child(3) {
+    transform: rotate(25deg);
+    z-index: 1;
+    margin-left: 150px;
+    margin-top: -150px;
+}
+
+.stacked-image:hover img {
+    filter: grayscale(0%); 
+}
+
+.stacked-image:hover {
+    z-index: 10; 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.stacked-image:nth-child(1):hover {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.stacked-image:nth-child(2):hover {
+    transform: rotate(10deg) scale(1.1); 
+}
+
+.stacked-image:nth-child(3):hover {
+    transform: rotate(-5deg) scale(1.1); 
 }
