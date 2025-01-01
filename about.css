@@ -24,10 +24,16 @@ body {
     background-color: #141414;
     opacity: 1;
     background-size: 20vmin 1px;
-    background-image:  repeating-linear-gradient(to right, #1F1F1F, #1F1F1F 2px, #141414 2px, #141414);
+    background-image:  repeating-linear-gradient(to right, #1F1F1F, #1F1F1F 2px, #141414 1px, #141414);
     font-family: 'Manrope', sans-serif;
     transition: background-color 1s ease;
     user-select: none;
+}
+
+.body2 {
+    height: 1050px;
+    background-image:  repeating-linear-gradient(to right, #3a3a3a, #3a3a3a 1px, #161616 1px, #161616);
+    background-size: 20vmin 1px;
 }
 
 ::-webkit-scrollbar {
@@ -188,7 +194,8 @@ main {
     color: #fff;
     text-align: left;
     margin-left: 100px;
-    padding-top: 200px;
+    padding-top: 50px;
+    margin-top: 200px;
 }
 
 .achievements-container {
@@ -210,7 +217,7 @@ main {
 .achievement-boxes {
     position: absolute;
     top: -100px; 
-    right: 12vw;
+    right: 5vw;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -221,7 +228,7 @@ main {
     position: relative;
     width: 330px;
     height: 250px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 5px;
     padding-top: 10px;
     margin-bottom: 20px;
@@ -229,6 +236,8 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    border: #fff 0.5px solid;
+    z-index: 20;
 }
 
 .title-marquee, .title-marquee2 {
@@ -245,7 +254,7 @@ main {
     animation: marquee 10s linear infinite;
     font-family: 'ManropeExtraBold', sans-serif;
     font-size: 2rem;
-    color: #01010e;
+    color: #fff;
 }
 
 .title-marquee2 p {
@@ -253,15 +262,16 @@ main {
     animation: marquee2 10s linear infinite;
     font-family: 'ManropeExtraBold', sans-serif;
     font-size: 2rem;
-    color: #01010e;
+    color: #fff;
 }
 
 .box-text {
-    color: #9a9a9a;
+    color: #e6e6e6;
     text-align: left;
     font-family: 'Manrope', sans-serif;
     font-size: 1rem;
     padding-left: 10px;
+    padding-right: 10px;
     padding-top: 10px;
 }
 
@@ -325,7 +335,6 @@ main {
     }
 
     .box-text {
-        color: #9a9a9a;
         text-align: center;
         font-family: 'Manrope', sans-serif;
         font-size: 1rem;
@@ -336,6 +345,10 @@ main {
 
     .stacked-images-container {
         display: none;
+    }
+
+    .body2 {
+        height: 1100px;
     }
 }
 
@@ -354,6 +367,10 @@ main {
 
     .content-text {
         max-width: 25em; 
+    }
+
+    .body2 {
+        height: 1050px;
     }
 }
 
@@ -506,7 +523,7 @@ main {
     width: 350px; 
     height: 350px;
     margin-top: 250px;
-    margin-left: 10vw; 
+    margin-left: 12vw; 
 }
 
 .stacked-image {
@@ -530,13 +547,13 @@ main {
 }
 
 .stacked-image:nth-child(1) {
-    transform: rotate(-40deg);
+    transform: rotate(-26deg);
     z-index: 3;
-    margin-top: -120px;
+    margin-top: -150px;
 }
 
 .stacked-image:nth-child(2) {
-    transform: rotate(-15deg);
+    transform: rotate(-5deg);
     z-index: 2;
     margin-left: 100px;
     margin-top: 50px;
@@ -545,8 +562,8 @@ main {
 .stacked-image:nth-child(3) {
     transform: rotate(25deg);
     z-index: 1;
-    margin-left: 150px;
-    margin-top: -150px;
+    margin-left: 200px;
+    margin-top: -200px;
 }
 
 .stacked-image:hover img {
@@ -558,14 +575,13 @@ main {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
 }
 
-.stacked-image:nth-child(1):hover {
-    transform: rotate(-10deg) scale(1.1);
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.stacked-image:nth-child(2):hover {
-    transform: rotate(10deg) scale(1.1); 
-}
-
-.stacked-image:nth-child(3):hover {
-    transform: rotate(-5deg) scale(1.1); 
+.visible {
+    opacity: 1;
+    transform: translateY(0); 
 }
