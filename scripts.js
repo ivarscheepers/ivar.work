@@ -100,6 +100,25 @@ document.addEventListener("scroll", () => {
 document.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const image = document.querySelector('.title-image');
-    const width = Math.max(30, 50 - scrollY / 50); 
+    const width = Math.max(30, 70 - scrollY / 25); 
     image.style.width = `${width}vw`;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.hidden'); 
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible'); 
+                }, 100);
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, {
+        threshold: 0.85
+    });
+
+    elements.forEach(element => observer.observe(element));
 });
