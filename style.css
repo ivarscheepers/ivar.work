@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'ManropeBold';
+    src: url('assets/fonts/Manrope/Manrope-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/Manrope/Manrope-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ManropeExtraBold';
+    src: url('assets/fonts/Manrope/Manrope-ExtraBold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #141414;
+    font-family: 'Manrope', sans-serif;
+    transition: background-color 1s ease;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.coa img {
+    position: absolute;
+}
+
+.coa img.left {
+    width: 400px;
+    height: auto;
+    left: -50px;
+    top: 5vh;
+    transform: rotate(30deg);
+}
+
+.coa img.right {
+    width: 400px;
+    height: auto;
+    right: -50px;
+    bottom: 5vh;
+    transform: rotate(30deg);
+}
+
+.title a {
+    color: white;
+    font-family: 'ManropeExtraBold';
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.title a:hover {
+    text-decoration: underline;
+}
+
+.transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 500;
+    pointer-events: none;
+}
+
+.transition-row {
+    flex: 1;
+    display: flex;
+}
+
+.transition-row.row-1 .block {
+    transform-origin: top;
+}
+
+.transition-row.row-2 .block {
+    transform-origin: bottom;
+}
+
+.block {
+    flex: 1;
+    background-color: #0A0A0A;
+    transform: scaleY(0);
+    will-change: transform;
+    visibility: hidden;
+}
