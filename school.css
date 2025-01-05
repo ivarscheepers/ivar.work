@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'ManropeBold';
+    src: url('assets/fonts/Manrope/Manrope-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/Manrope/Manrope-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ManropeExtraBold';
+    src: url('assets/fonts/Manrope/Manrope-ExtraBold.ttf');
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body::-moz-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+}
+
+body {
+    height: 90vh;
+    background-color: #141414;
+    font-family: 'Manrope', sans-serif;
+    transition: background-color 1s ease;
+    margin: 0;
+    user-select: none;
+    overflow: auto; 
+}
+
+#image-track {
+    display: flex;
+    gap: 3vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    user-select: none;
+}
+
+#image-track > .image {
+    width: 35vmin;
+    height: 50vmin;
+    object-fit: cover;
+    object-position: 100% center;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#image-track .image:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.image.fade-out {
+    animation: fadeOut 0.6s forwards; 
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+}
+
+.back-button {
+    position: fixed;
+    top: 35px;
+    left: 35px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    z-index: 50;
+    transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.back-button:hover {
+    color: #707070;
+}
+
+.back-button.clicked {
+    opacity: 0;
+}
+
+/* Ensure the images are responsive to screen size */
+@media (max-width: 768px) {
+    #image-track > .image {
+        width: 30vmin;
+        height: 42.8571428571vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    #image-track > .image {
+        width: 25vmin;
+        height: 35.7142857143vmin;
+    }
+}
