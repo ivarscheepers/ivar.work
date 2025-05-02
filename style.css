@@ -87,6 +87,27 @@ header {
     color: white;
 }
 
+.hero-title2 {
+    font-size: 1rem;
+    font-family: 'ManropeBold', sans-serif;
+    color: white;
+}
+
+.signature-box {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+}
+
+#signature-pad {
+    border: 1px solid white;
+    background-color: #fff;
+    cursor: crosshair;
+    border-radius: 5px;
+    margin-top: -250px;
+    margin-bottom: 50px;
+}
+
 .menu-overlay {
     position: fixed;
     bottom: 0;
