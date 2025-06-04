@@ -345,7 +345,6 @@ header {
     .foto-rechts {       
         left: 50%;        
         right: auto;    
-        transform: translateX(-50%);
         max-width: 40vw; 
     }
 
