@@ -361,6 +361,7 @@ header {
     transform: translateX(-50%);
     border-radius: 4px;
     pointer-events: none;
+      transform-origin: center center;
 }
 
 .tekst-onder-maussie {
