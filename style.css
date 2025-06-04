@@ -343,8 +343,6 @@ header {
     }
 
     .foto-rechts {       
-        left: 50%;        
-        right: auto;    
         max-width: 40vw; 
     }
 
