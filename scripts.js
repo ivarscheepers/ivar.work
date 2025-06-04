@@ -124,7 +124,7 @@ gsap.to(".foto-rechts", {
   end: "bottom top", 
     scrub: true,
   },
-  scale: 1.2,   
+  scale: 1,   
   y: "140vh",       
   ease: "power1.out"
 });
