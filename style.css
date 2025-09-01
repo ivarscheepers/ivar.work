@@ -1,0 +1,302 @@
+@font-face {
+    font-family: 'ManropeBold';
+    src: url('assets/fonts/Manrope/Manrope-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/Manrope/Manrope-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ManropeExtraBold';
+    src: url('assets/fonts/Manrope/Manrope-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Seasons';
+    src: url('assets/fonts/Seasons/Fontspring-DEMO-theseasons-reg.otf');
+}
+
+@font-face {
+    font-family: 'Seasons2';
+    src: url('assets/fonts/Seasons/Fontspring-DEMO-theseasons-bd.otf');
+}
+
+@font-face {
+    font-family: 'LinLibertine-aS';
+    src: url('assets/fonts/linux_libertine/LinLibertine_aS.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body {
+    font-family: 'ManropeExtraBold', sans-serif;
+    color: white;
+    margin: 0;
+    user-select: none;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: transparent;
+    color: white;
+}
+
+.menu-button {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    z-index: 101;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease;
+}
+  
+.section-1 {
+    background-image: url('assets/images/vac2/14.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+}
+
+.section-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(12, 8, 5, 0.87); 
+    z-index: 1;
+}
+
+.section-1 > * {
+    position: relative;
+    z-index: 2;
+}
+
+.maussie-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.maussie-logo {
+    font-size: 15rem;
+    font-family: 'Seasons2', sans-serif;
+    color: #fff;
+}
+
+.maussie-subtext {
+    font-size: 3rem;
+    font-family: 'Seasons', sans-serif;
+    color: #fff;
+    text-transform: lowercase;
+    letter-spacing: 5px;
+}
+
+@media (max-width: 1600px) {
+    .maussie-logo {
+        font-size: 15rem;
+    }
+
+    .maussie-subtext {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .maussie-logo {
+        font-size: 14rem;
+    }
+
+    .maussie-subtext {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .maussie-logo {
+        font-size: 13rem;
+    }
+
+    .maussie-subtext {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .maussie-logo {
+        font-size: 11rem;
+    }
+
+    .maussie-subtext {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .maussie-logo {
+        font-size: 9rem;
+    }
+
+    .maussie-subtext {
+        font-size: 2rem;
+    }
+
+    .foto-rechts {
+        max-width: 33vw;
+        top: 0%;
+    }
+}
+
+@media (max-width: 700px) {
+     .maussie-logo {
+        font-size: 8rem;
+    }
+
+    .maussie-subtext {
+        font-size: 1.8rem;
+    }
+
+    .foto-rechts {
+        max-width: 35vw;
+        top: 2%;
+    }
+}
+
+@media (max-width: 600px) {
+     .maussie-logo {
+        font-size: 7rem;
+    }
+
+    .maussie-subtext {
+        font-size: 1.5rem;
+    }
+
+     .foto-rechts {
+        max-width: 35vw;
+        top: 5%;
+    }
+}
+
+@media (max-width: 500px) {
+     .maussie-logo {
+        font-size: 5rem;
+    }
+
+    .maussie-subtext {
+        font-size: 1.2rem;
+    }
+
+    .foto-rechts {
+        max-width: 40vw;
+        top: 8%;
+    }
+}
+
+@media (max-width: 400px) {
+     .maussie-logo {
+        font-size: 4rem;
+    }
+
+    .maussie-subtext {
+        font-size: 0.8rem;
+    }
+
+    .foto-rechts {
+        max-width: 45vw;
+        top: 8%;
+    }
+}
+
+.foto-rechts {
+    position: absolute;     
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;             
+    left: 50%;            
+    opacity: 0;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.tekst-onder-maussie1 {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    opacity: 0;
+    transform: translateY(40px);
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    max-width: 600px; 
+    text-align: left;
+    font-family: 'Seasons';
+    font-size: 1rem;
+}
+
+.tekst-onder-maussie1 a {
+    color: white;
+}
+
+.tekst-onder-maussie2 {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    opacity: 0;
+    transform: translateY(40px);
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    max-width: 600px; 
+    text-align: left;
+    font-family: 'Seasons';
+    font-size: 1rem;
+}
+
+.section-2 {
+    padding: 20px 0;
+    background-color: #0c0c0c;
+    height: 100vh;
+    position: relative;
+}
+
+.topbar {
+    width: 100%;
+    background-color: transparent;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.topbar-logo-img {
+    height: 30px; 
+    object-fit: contain;
+}
